@@ -4,75 +4,44 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Shield, Brain, GraduationCap, Users, ChevronRight, Mail, Linkedin, Calendar, Award, FileText, Globe, Lock, CheckCircle, Star, TrendingUp, Zap, Target, ShieldCheck, Users2, Building2, Server, Database, Network, Eye, AlertTriangle, Clock, BarChart3, Calculator, Phone, MessageSquare, Sun, Moon, Monitor } from "lucide-react";
+import { Shield, Brain, GraduationCap, Users, ChevronRight, Mail, Linkedin, Calendar, Award, FileText, Globe, Lock, CheckCircle, Star, TrendingUp, Zap, Target, ShieldCheck, Users2, Building2, Server, Database, Network, Eye, AlertTriangle, Clock, BarChart3, Calculator, Phone, MessageSquare, Sun, Moon, Monitor, Cloud, Code } from "lucide-react";
 import { CybersecurityChatbot } from "@/components/CybersecurityChatbot";
 import cyberHero from "@/assets/cyber-hero.jpg";
 import aiGrcIcon from "@/assets/ai-grc-icon.jpg";
 import trainingIcon from "@/assets/training-icon.jpg";
 import advisoryIcon from "@/assets/advisory-icon.jpg";
 import otSecurityIcon from "@/assets/ot-security-icon.jpg";
-import { useState, useEffect } from "react";
+import { useTheme } from "@/hooks/useTheme";
+import { useScrollTo } from "@/hooks/useScrollTo";
+import { ParticleSystem } from "@/components/ParticleSystem";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { LoadingSpinner } from "@/components/LoadingSpinner";
 
 // N-total Cybersecurity LLC - Professional Website
 const Index = () => {
-  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Check for saved theme preference or default to system
-    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | 'system' || 'system';
-    setTheme(savedTheme);
-  }, []);
-
-  // Listen for system theme changes
-  useEffect(() => {
-    if (theme !== 'system') return;
-    
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => {
-      const root = window.document.documentElement;
-      root.classList.remove('light', 'dark');
-      const systemTheme = mediaQuery.matches ? 'dark' : 'light';
-      root.classList.add(systemTheme);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [theme]);
-
-  useEffect(() => {
-    if (!mounted) return;
-    
-    const root = window.document.documentElement;
-    root.classList.remove('light', 'dark');
-
-    if (theme === 'system') {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.classList.add(systemTheme);
-    } else {
-      root.classList.add(theme);
-    }
-    
-    localStorage.setItem('theme', theme);
-  }, [theme, mounted]);
-
-  const toggleTheme = () => {
-    if (theme === 'light') setTheme('dark');
-    else if (theme === 'dark') setTheme('system');
-    else setTheme('light');
-  };
+  const { theme, mounted, toggleTheme, getCurrentTheme } = useTheme();
+  const { scrollToTop } = useScrollTo();
 
   const getThemeIcon = () => {
-    if (theme === 'light') return <Sun className="w-4 h-4" />;
-    if (theme === 'dark') return <Moon className="w-4 h-4" />;
+    const currentTheme = getCurrentTheme();
+    if (currentTheme === 'light') return <Sun className="w-4 h-4" />;
+    if (currentTheme === 'dark') return <Moon className="w-4 h-4" />;
     return <Monitor className="w-4 h-4" />;
   };
 
-  if (!mounted) return null;
+  if (!mounted) return <LoadingSpinner text="Initializing..." variant="cyber" />;
 
   return (
+    <ErrorBoundary>
           <div className="min-h-screen bg-gradient-hero text-foreground">
+        {/* Skip Navigation Link */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyber-blue focus:text-white focus:rounded-md focus:shadow-lg"
+          aria-label="Skip to main content"
+        >
+          Skip to main content
+        </a>
         {/* Theme Indicator Banner */}
         <div className="fixed top-0 left-0 right-0 z-50 bg-cyber-blue/90 text-white text-center py-1 text-xs font-medium backdrop-blur-sm">
           <span className="inline-flex items-center space-x-2">
@@ -90,24 +59,34 @@ const Index = () => {
         </div>
 
         {/* Navigation */}
-        <nav className="fixed top-8 w-full z-40 bg-background/80 backdrop-blur-md border-b border-border">
+        <nav className="fixed top-8 w-full z-40 bg-background/80 backdrop-blur-md border-b border-border" role="navigation" aria-label="Main navigation">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="flex items-center space-x-3">
+          <a 
+            href="#hero" 
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-300 cursor-pointer group"
+            aria-label="Return to top of page"
+          >
             <img 
               src="/NTotalLogo.png" 
               alt="N-Total Cybersecurity Logo" 
-              className="w-10 h-10 object-contain"
+              className="w-10 h-10 object-contain group-hover:scale-105 transition-transform duration-300"
+              loading="eager"
+              decoding="async"
+              width="40"
+              height="40"
             />
-            <div className="text-2xl font-bold text-cyber-blue">N-total Cybersecurity</div>
-          </div>
+            <div className="text-2xl font-bold text-cyber-blue group-hover:text-cyber-blue/80 transition-colors duration-300">
+              N-total Cybersecurity
+            </div>
+          </a>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
-            <a href="#services" className="text-foreground hover:text-cyber-blue transition-colors">Services</a>
-            <a href="#solutions" className="text-foreground hover:text-cyber-blue transition-colors">Solutions</a>
-            <a href="#resources" className="text-foreground hover:text-cyber-blue transition-colors">Resources</a>
-            <a href="#about" className="text-foreground hover:text-cyber-blue transition-colors">About</a>
-            <a href="#contact" className="text-foreground hover:text-cyber-blue transition-colors">Contact</a>
+          <div className="hidden md:flex items-center space-x-6" role="menubar">
+            <a href="#services" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Services section">Services</a>
+            <a href="#solutions" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Solutions section">Solutions</a>
+            <a href="#resources" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Resources section">Resources</a>
+            <a href="#about" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to About section">About</a>
+            <a href="#contact" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Contact section">Contact</a>
             <Button variant="cyber" size="sm">Request Demo</Button>
             <Button
               variant="ghost"
@@ -115,6 +94,9 @@ const Index = () => {
               onClick={toggleTheme}
               className="w-10 h-10 p-0 rounded-full hover:bg-cyber-blue/10 transition-all duration-300 theme-toggle group"
               title={`Current theme: ${theme} (click to cycle)`}
+              aria-label={`Switch theme. Current theme: ${theme === 'system' ? 'System' : theme === 'light' ? 'Light' : 'Dark'} mode`}
+              role="switch"
+              aria-pressed={theme !== 'system'}
             >
               <div className="relative">
                 {getThemeIcon()}
@@ -143,7 +125,8 @@ const Index = () => {
       </nav>
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div id="main-content" className="sr-only">Main content starts here</div>
         {/* Enhanced Cybersecurity Hero Animations */}
         <div className="absolute inset-0 z-0">
           {/* Main Background Image */}
@@ -152,156 +135,16 @@ const Index = () => {
             alt="Cybersecurity Hero" 
             className={`w-full h-full object-cover transition-opacity duration-500 ${
               theme === 'light' ? 'opacity-60' : 'opacity-30'
-            }`} 
+            }`}
+            loading="eager"
+            decoding="async"
           />
           <div className={`absolute inset-0 bg-gradient-hero transition-opacity duration-500 ${
             theme === 'light' ? 'opacity-90' : 'opacity-80'
           }`}></div>
           
-          {/* Advanced Cybersecurity Particle System */}
-          <div className="absolute inset-0">
-            {/* Data Flow Particles */}
-            {[...Array(15)].map((_, i) => (
-              <div
-                key={`data-${i}`}
-                className={`absolute w-1.5 h-1.5 rounded-full animate-pulse ${
-                  theme === 'light' ? 'bg-cyber-blue/90' : 'bg-cyber-blue/60'
-                }`}
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 4}s`,
-                  animationDuration: `${3 + Math.random() * 3}s`,
-                }}
-              />
-            ))}
-            
-            {/* Threat Indicator Particles */}
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={`threat-${i}`}
-                className={`absolute w-2 h-2 rounded-full animate-ping ${
-                  theme === 'light' ? 'bg-red-500/70' : 'bg-red-500/50'
-                }`}
-                style={{
-                  left: `${20 + (i * 10)}%`,
-                  top: `${30 + (i * 5)}%`,
-                  animationDelay: `${i * 0.5}s`,
-                  animationDuration: '2s',
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Sophisticated Scanning Network */}
-          <div className="absolute inset-0">
-            {/* Primary Security Scan */}
-            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber-blue to-transparent animate-scan-line transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-95' : 'opacity-100'
-            }`}></div>
-            
-            {/* Diagonal Security Scans */}
-            <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/60 to-transparent animate-scan-diagonal transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-90' : 'opacity-100'
-            }`} style={{ transform: 'rotate(45deg)', transformOrigin: '0 0' }}></div>
-            
-            <div className={`absolute top-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-cyber-blue/60 to-transparent animate-scan-diagonal-reverse transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-90' : 'opacity-100'
-            }`} style={{ transform: 'rotate(-45deg)', transformOrigin: '100% 0' }}></div>
-            
-            {/* Vertical Security Scans */}
-            <div className={`absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-cyber-blue/50 to-transparent animate-scan-vertical transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-85' : 'opacity-100'
-            }`}></div>
-            
-            <div className={`absolute top-0 right-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-cyber-blue/50 to-transparent animate-scan-vertical-delayed transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-85' : 'opacity-100'
-            }`}></div>
-          </div>
-
-          {/* Enhanced Matrix Rain with Cybersecurity Symbols */}
-          <div className={`absolute inset-0 transition-opacity duration-500 ${
-            theme === 'light' ? 'opacity-70' : 'opacity-20'
-          }`}>
-            {[...Array(10)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute top-0 text-cyber-blue text-xs font-mono animate-matrix-rain"
-                style={{
-                  left: `${(i * 10)}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${10 + Math.random() * 6}s`,
-                }}
-              >
-                {[...Array(25)].map((_, j) => (
-                  <div key={j} className="mb-1.5">
-                    {Math.random() > 0.7 ? 
-                      ['🔒', '🛡️', '⚡', '🔐', '🛡️', '⚔️'][Math.floor(Math.random() * 6)] :
-                      String.fromCharCode(0x30A0 + Math.random() * 96)
-                    }
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          {/* Advanced Floating Security Icons with Context */}
-          <div className="absolute inset-0">
-            {/* AI Security Brain */}
-            <div className="absolute top-24 left-24 animate-float-sophisticated">
-              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
-                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
-              }`}>
-                <Brain className={`w-8 h-8 transition-colors duration-500 ${
-                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
-                }`} />
-              </div>
-            </div>
-            
-            {/* Threat Intelligence Eye */}
-            <div className="absolute top-36 right-36 animate-float-sophisticated-delayed">
-              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
-                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
-              }`}>
-                <Eye className={`w-7 h-7 transition-colors duration-500 ${
-                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
-                }`} />
-              </div>
-            </div>
-            
-            {/* Network Security Shield */}
-            <div className="absolute bottom-44 left-1/4 animate-float-sophisticated-slow">
-              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
-                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
-              }`}>
-                <Shield className={`w-8 h-8 transition-colors duration-500 ${
-                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
-                }`} />
-              </div>
-            </div>
-            
-            {/* Data Protection Lock */}
-            <div className="absolute top-1/3 right-1/4 animate-float-sophisticated-medium">
-              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
-                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
-              }`}>
-                <Lock className={`w-6 h-6 transition-colors duration-500 ${
-                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
-                }`} />
-              </div>
-            </div>
-            
-            {/* Infrastructure Server */}
-            <div className="absolute bottom-1/3 right-24 animate-float-sophisticated-fast">
-              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
-                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
-              }`}>
-                <Server className={`w-7 h-7 transition-colors duration-500 ${
-                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
-                }`} />
-              </div>
-            </div>
-          </div>
+          {/* Particle System Component */}
+          <ParticleSystem theme={theme} />
 
           {/* Pulsing Grid */}
           <div className="absolute inset-0">
@@ -423,13 +266,13 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-surface/50">
+      <section id="services" className="py-24 bg-surface/50" aria-labelledby="services-heading">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
                          <Badge className="badge-premium mb-4 px-4 py-2">
                Our Core Solutions
              </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 id="services-heading" className="text-4xl md:text-5xl font-bold mb-6">
               Comprehensive Cybersecurity Services
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -472,7 +315,7 @@ const Index = () => {
                   </div>
                   <Button className="btn-premium mt-6 px-6 py-3">Learn More</Button>
                 </div>
-                                 <Card className="card-premium-service p-8">
+                                 <Card className="card-premium-case-study p-8">
                    <CardHeader className="pb-6">
                      <CardTitle className="text-2xl text-cyber-blue font-bold">Key Capabilities</CardTitle>
                      <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
@@ -534,7 +377,7 @@ const Index = () => {
                   </div>
                                      <Button className="btn-premium mt-6 px-6 py-3">View Programs</Button>
                 </div>
-                                 <Card className="card-premium-service p-8">
+                                 <Card className="card-premium-case-study p-8">
                    <CardHeader className="pb-6">
                      <CardTitle className="text-2xl text-cyber-blue font-bold">Training Programs</CardTitle>
                      <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
@@ -596,7 +439,7 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Get Consultation</Button>
                 </div>
-                                 <Card className="card-premium-service p-8">
+                                 <Card className="card-premium-case-study p-8">
                    <CardHeader className="pb-6">
                      <CardTitle className="text-2xl text-cyber-blue font-bold">Advisory Services</CardTitle>
                      <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
@@ -658,7 +501,7 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Explore Solutions</Button>
                 </div>
-                                 <Card className="card-premium-service p-8">
+                                 <Card className="card-premium-case-study p-8">
                    <CardHeader className="pb-6">
                      <CardTitle className="text-2xl text-cyber-blue font-bold">OT Security Features</CardTitle>
                      <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
@@ -713,11 +556,13 @@ const Index = () => {
           </div>
 
           <Tabs defaultValue="healthcare" className="w-full">
-            <TabsList className="grid w-full grid-cols-4 bg-surface/50 p-1">
+            <TabsList className="grid w-full grid-cols-6 bg-surface/50 p-1">
               <TabsTrigger value="healthcare" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Healthcare</TabsTrigger>
               <TabsTrigger value="finance" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Finance</TabsTrigger>
               <TabsTrigger value="manufacturing" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Manufacturing</TabsTrigger>
               <TabsTrigger value="government" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Government</TabsTrigger>
+              <TabsTrigger value="retail" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Retail</TabsTrigger>
+              <TabsTrigger value="technology" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Technology</TabsTrigger>
             </TabsList>
             
             <TabsContent value="healthcare" className="mt-8">
@@ -747,26 +592,35 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Healthcare Solutions</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Healthcare Features</CardTitle>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Healthcare Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Lock className="w-5 h-5 text-cyber-blue" />
-                      <span>HIPAA Compliance</span>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">HIPAA Compliance</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Medical Device Security</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Medical Device Security</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Database className="w-5 h-5 text-cyber-blue" />
-                      <span>PHI Protection</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">PHI Protection</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <AlertTriangle className="w-5 h-5 text-cyber-blue" />
-                      <span>Healthcare Incident Response</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <AlertTriangle className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Healthcare Incident Response</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -800,26 +654,35 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Financial Solutions</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Financial Features</CardTitle>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Financial Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Lock className="w-5 h-5 text-cyber-blue" />
-                      <span>PCI DSS Compliance</span>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">PCI DSS Compliance</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Fraud Detection</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Fraud Detection</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Database className="w-5 h-5 text-cyber-blue" />
-                      <span>Transaction Security</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Transaction Security</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <FileText className="w-5 h-5 text-cyber-blue" />
-                      <span>Regulatory Compliance</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <FileText className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Regulatory Compliance</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -853,26 +716,35 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Manufacturing Solutions</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Manufacturing Features</CardTitle>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Manufacturing Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Server className="w-5 h-5 text-cyber-blue" />
-                      <span>ICS Security</span>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Server className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">ICS Security</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Network className="w-5 h-5 text-cyber-blue" />
-                      <span>Supply Chain Security</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Network className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Supply Chain Security</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Lock className="w-5 h-5 text-cyber-blue" />
-                      <span>IP Protection</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">IP Protection</span>
                     </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>OT Security</span>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">OT Security</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -906,26 +778,159 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Government Solutions</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Government Features</CardTitle>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Government Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">FedRAMP Compliance</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Classified Data Protection</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Critical Infrastructure</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Defense Contractors</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="retail" className="mt-8">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-cyber-blue mb-4">Retail & E-commerce Security</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Protect customer data and secure online transactions with our specialized retail cybersecurity solutions.
+                  </p>
+                  <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <Lock className="w-5 h-5 text-cyber-blue" />
-                      <span>FedRAMP Compliance</span>
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>PCI DSS compliance and validation</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Classified Data Protection</span>
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>E-commerce platform security</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Building2 className="w-5 h-5 text-cyber-blue" />
-                      <span>Critical Infrastructure</span>
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>Customer data protection</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Defense Contractors</span>
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>Point-of-sale system security</span>
+                    </div>
+                  </div>
+                  <Button variant="cyber" className="mt-6">Retail Solutions</Button>
+                </div>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Retail Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">PCI DSS Compliance</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Globe className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">E-commerce Security</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Customer Data Protection</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Server className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">POS System Security</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+
+            <TabsContent value="technology" className="mt-8">
+              <div className="grid lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-cyber-blue mb-4">Technology & SaaS Security</h3>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    Secure your technology infrastructure and protect intellectual property with our specialized tech cybersecurity solutions.
+                  </p>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>Cloud security and compliance</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>API security and testing</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>DevSecOps integration</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
+                      <span>Intellectual property protection</span>
+                    </div>
+                  </div>
+                  <Button variant="cyber" className="mt-6">Technology Solutions</Button>
+                </div>
+                <Card className="card-premium-case-study p-8">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl text-cyber-blue font-bold">Technology Features</CardTitle>
+                    <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Cloud className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">Cloud Security</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Code className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">API Security</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Zap className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">DevSecOps</span>
+                    </div>
+                    <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                      <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                        <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                      </div>
+                      <span className="font-medium">IP Protection</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -2093,6 +2098,7 @@ const Index = () => {
       {/* AI Cybersecurity Chatbot */}
       <CybersecurityChatbot />
     </div>
+    </ErrorBoundary>
   );
 };
 

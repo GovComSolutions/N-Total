@@ -261,6 +261,11 @@ All colors MUST be HSL.
     opacity: 1;
   }
 
+  .card-premium-service:focus-within {
+    outline: 2px solid hsl(var(--cyber-blue));
+    outline-offset: 2px;
+  }
+
   .card-premium-case-study {
     background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface)));
     border: 1px solid hsl(var(--border));
@@ -303,6 +308,11 @@ All colors MUST be HSL.
     transform: scaleX(1);
   }
 
+  .card-premium-case-study:focus-within {
+    outline: 2px solid hsl(var(--cyber-blue));
+    outline-offset: 2px;
+  }
+
   .card-premium-resource {
     background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--surface)));
     border: 1px solid hsl(var(--border));
@@ -342,6 +352,66 @@ All colors MUST be HSL.
 
   .card-premium-resource:hover::after {
     opacity: 1;
+  }
+
+  .card-premium-resource:focus-within {
+    outline: 2px solid hsl(var(--cyber-blue));
+    outline-offset: 2px;
+  }
+
+  /* Accessibility: Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .card-premium-case-study,
+    .card-premium-service,
+    .card-premium-resource {
+      transition: none;
+    }
+    
+    .card-premium-case-study:hover,
+    .card-premium-service:hover,
+    .card-premium-resource:hover {
+      transform: none;
+    }
+    
+    .card-premium-case-study::before,
+    .card-premium-service::after,
+    .card-premium-resource::after {
+      transition: none;
+    }
+    
+    /* Disable all animations for reduced motion */
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Mobile Touch Experience */
+  @media (hover: none) and (pointer: coarse) {
+    .card-premium-case-study:hover,
+    .card-premium-service:hover,
+    .card-premium-resource:hover {
+      transform: none;
+    }
+    
+    .card-premium-case-study:active {
+      transform: translateY(-2px) scale(1.01);
+      transition: transform 0.1s ease;
+    }
+    
+    .card-premium-service:active {
+      transform: translateY(-2px) scale(1.01);
+      transition: transform 0.1s ease;
+    }
+    
+    .card-premium-resource:active {
+      transform: translateY(-2px) scale(1.01);
+      transition: transform 0.1s ease;
+    }
   }
 
   /* Enhanced Button Styles */
