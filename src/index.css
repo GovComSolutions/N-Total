@@ -298,6 +298,101 @@ All colors MUST be HSL.
   .animate-fade-in-up-slowest {
     animation: fade-in-up 0.8s ease-out 0.8s both;
   }
+
+  /* Enhanced Cybersecurity Animations */
+  
+  /* Sophisticated Floating Animations */
+  .animate-float-sophisticated {
+    animation: float-sophisticated 8s ease-in-out infinite;
+  }
+  
+  .animate-float-sophisticated-delayed {
+    animation: float-sophisticated 8s ease-in-out infinite 1s;
+  }
+  
+  .animate-float-sophisticated-slow {
+    animation: float-sophisticated 10s ease-in-out infinite 2s;
+  }
+  
+  .animate-float-sophisticated-medium {
+    animation: float-sophisticated 9s ease-in-out infinite 1.5s;
+  }
+  
+  .animate-float-sophisticated-fast {
+    animation: float-sophisticated 7s ease-in-out infinite 0.5s;
+  }
+
+  /* Advanced Scanning Animations */
+  .animate-scan-diagonal {
+    animation: scan-diagonal 4s linear infinite;
+  }
+  
+  .animate-scan-diagonal-reverse {
+    animation: scan-diagonal 4s linear infinite 2s;
+  }
+  
+  .animate-scan-vertical {
+    animation: scan-vertical 3s linear infinite;
+  }
+  
+  .animate-scan-vertical-delayed {
+    animation: scan-vertical 3s linear infinite 1.5s;
+  }
+
+  /* Cybersecurity Infrastructure Animations */
+  .animate-firewall-pulse {
+    animation: firewall-pulse 5s ease-in-out infinite;
+  }
+  
+  .animate-firewall-pulse-delayed {
+    animation: firewall-pulse 5s ease-in-out infinite 1.5s;
+  }
+  
+  .animate-firewall-pulse-slow {
+    animation: firewall-pulse 5s ease-in-out infinite 3s;
+  }
+  
+  .animate-encryption-spin {
+    animation: encryption-spin 12s linear infinite;
+  }
+  
+  .animate-encryption-spin-reverse {
+    animation: encryption-spin-reverse 8s linear infinite;
+  }
+  
+  .animate-node-pulse {
+    animation: node-pulse 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Hexagon Animations */
+  .animate-cyber-hexagon {
+    animation: cyber-hexagon 25s linear infinite;
+  }
+  
+  .animate-cyber-hexagon-reverse {
+    animation: cyber-hexagon-reverse 20s linear infinite;
+  }
+  
+  .animate-cyber-hexagon-slow {
+    animation: cyber-hexagon-slow 30s linear infinite;
+  }
+
+  /* Sophisticated Glow Animations */
+  .animate-glow-pulse-sophisticated {
+    animation: glow-pulse-sophisticated 4s ease-in-out infinite;
+  }
+  
+  .animate-glow-pulse-sophisticated-delayed {
+    animation: glow-pulse-sophisticated 4s ease-in-out infinite 1s;
+  }
+  
+  .animate-glow-pulse-sophisticated-slow {
+    animation: glow-pulse-sophisticated 5s ease-in-out infinite 2s;
+  }
+  
+  .animate-glow-pulse-sophisticated-fast {
+    animation: glow-pulse-sophisticated 3s ease-in-out infinite 0.5s;
+  }
   
   .animate-text-glow {
     animation: text-glow 3s ease-in-out infinite alternate;
@@ -417,4 +512,101 @@ All colors MUST be HSL.
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
+}
+
+/* Enhanced Cybersecurity Keyframes */
+
+@keyframes float-sophisticated {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    filter: drop-shadow(0 0 8px rgba(0, 123, 255, 0.3));
+  }
+  25% { 
+    transform: translateY(-12px) translateX(3px) rotate(1deg); 
+    filter: drop-shadow(0 0 12px rgba(0, 123, 255, 0.5));
+  }
+  50% { 
+    transform: translateY(-20px) translateX(0px) rotate(0deg); 
+    filter: drop-shadow(0 0 15px rgba(0, 123, 255, 0.7));
+  }
+  75% { 
+    transform: translateY(-12px) translateX(-3px) rotate(-1deg); 
+    filter: drop-shadow(0 0 12px rgba(0, 123, 255, 0.5));
+  }
+}
+
+@keyframes scan-diagonal {
+  0% { transform: rotate(45deg) translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: rotate(45deg) translateX(100%); opacity: 0; }
+}
+
+@keyframes scan-vertical {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes firewall-pulse {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1); 
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.08); 
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.4);
+  }
+}
+
+@keyframes encryption-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes encryption-spin-reverse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes node-pulse {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(1); 
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scale(1.3); 
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6);
+  }
+}
+
+@keyframes cyber-hexagon {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes cyber-hexagon-reverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes cyber-hexagon-slow {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes glow-pulse-sophisticated {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scale(1); 
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.4);
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: scale(1.4); 
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.8);
+  }
 }

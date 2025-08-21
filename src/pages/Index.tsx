@@ -144,7 +144,7 @@ const Index = () => {
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        {/* Animated Background Elements */}
+        {/* Enhanced Cybersecurity Hero Animations */}
         <div className="absolute inset-0 z-0">
           {/* Main Background Image */}
           <img 
@@ -158,89 +158,148 @@ const Index = () => {
             theme === 'light' ? 'opacity-90' : 'opacity-80'
           }`}></div>
           
-          {/* Animated Floating Particles */}
+          {/* Advanced Cybersecurity Particle System */}
           <div className="absolute inset-0">
-            {[...Array(20)].map((_, i) => (
+            {/* Data Flow Particles */}
+            {[...Array(15)].map((_, i) => (
               <div
-                key={i}
-                className={`absolute w-1 h-1 rounded-full animate-pulse ${
-                  theme === 'light' ? 'bg-cyber-blue/80' : 'bg-cyber-blue'
+                key={`data-${i}`}
+                className={`absolute w-1.5 h-1.5 rounded-full animate-pulse ${
+                  theme === 'light' ? 'bg-cyber-blue/90' : 'bg-cyber-blue/60'
                 }`}
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 3}s`,
-                  animationDuration: `${2 + Math.random() * 2}s`,
+                  animationDelay: `${Math.random() * 4}s`,
+                  animationDuration: `${3 + Math.random() * 3}s`,
+                }}
+              />
+            ))}
+            
+            {/* Threat Indicator Particles */}
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={`threat-${i}`}
+                className={`absolute w-2 h-2 rounded-full animate-ping ${
+                  theme === 'light' ? 'bg-red-500/70' : 'bg-red-500/50'
+                }`}
+                style={{
+                  left: `${20 + (i * 10)}%`,
+                  top: `${30 + (i * 5)}%`,
+                  animationDelay: `${i * 0.5}s`,
+                  animationDuration: '2s',
                 }}
               />
             ))}
           </div>
 
-          {/* Scanning Lines Animation */}
+          {/* Sophisticated Scanning Network */}
           <div className="absolute inset-0">
-            <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue to-transparent animate-scan-line transition-opacity duration-500 ${
+            {/* Primary Security Scan */}
+            <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber-blue to-transparent animate-scan-line transition-opacity duration-500 ${
               theme === 'light' ? 'opacity-95' : 'opacity-100'
             }`}></div>
-            <div className={`absolute top-1/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/50 to-transparent animate-scan-line-delayed transition-opacity duration-500 ${
+            
+            {/* Diagonal Security Scans */}
+            <div className={`absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/60 to-transparent animate-scan-diagonal transition-opacity duration-500 ${
               theme === 'light' ? 'opacity-90' : 'opacity-100'
-            }`}></div>
-            <div className={`absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent animate-scan-line-slow transition-opacity duration-500 ${
+            }`} style={{ transform: 'rotate(45deg)', transformOrigin: '0 0' }}></div>
+            
+            <div className={`absolute top-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-cyber-blue/60 to-transparent animate-scan-diagonal-reverse transition-opacity duration-500 ${
+              theme === 'light' ? 'opacity-90' : 'opacity-100'
+            }`} style={{ transform: 'rotate(-45deg)', transformOrigin: '100% 0' }}></div>
+            
+            {/* Vertical Security Scans */}
+            <div className={`absolute top-0 left-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-cyber-blue/50 to-transparent animate-scan-vertical transition-opacity duration-500 ${
               theme === 'light' ? 'opacity-85' : 'opacity-100'
             }`}></div>
-            <div className={`absolute top-3/4 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyber-blue/40 to-transparent animate-scan-line-fast transition-opacity duration-500 ${
-              theme === 'light' ? 'opacity-88' : 'opacity-100'
+            
+            <div className={`absolute top-0 right-1/4 w-0.5 h-full bg-gradient-to-b from-transparent via-cyber-blue/50 to-transparent animate-scan-vertical-delayed transition-opacity duration-500 ${
+              theme === 'light' ? 'opacity-85' : 'opacity-100'
             }`}></div>
           </div>
 
-          {/* Matrix Rain Effect */}
+          {/* Enhanced Matrix Rain with Cybersecurity Symbols */}
           <div className={`absolute inset-0 transition-opacity duration-500 ${
             theme === 'light' ? 'opacity-70' : 'opacity-20'
           }`}>
-            {[...Array(8)].map((_, i) => (
+            {[...Array(10)].map((_, i) => (
               <div
                 key={i}
                 className="absolute top-0 text-cyber-blue text-xs font-mono animate-matrix-rain"
                 style={{
-                  left: `${(i * 12.5)}%`,
-                  animationDelay: `${Math.random() * 2}s`,
-                  animationDuration: `${8 + Math.random() * 4}s`,
+                  left: `${(i * 10)}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${10 + Math.random() * 6}s`,
                 }}
               >
-                {[...Array(20)].map((_, j) => (
-                  <div key={j} className="mb-2">
-                    {String.fromCharCode(0x30A0 + Math.random() * 96)}
+                {[...Array(25)].map((_, j) => (
+                  <div key={j} className="mb-1.5">
+                    {Math.random() > 0.7 ? 
+                      ['🔒', '🛡️', '⚡', '🔐', '🛡️', '⚔️'][Math.floor(Math.random() * 6)] :
+                      String.fromCharCode(0x30A0 + Math.random() * 96)
+                    }
                   </div>
                 ))}
               </div>
             ))}
           </div>
 
-          {/* Floating Security Icons */}
+          {/* Advanced Floating Security Icons with Context */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-20 animate-float-slow">
-              <Shield className={`w-8 h-8 transition-colors duration-500 ${
-                theme === 'light' ? 'text-cyber-blue/80' : 'text-cyber-blue/30'
-              }`} />
+            {/* AI Security Brain */}
+            <div className="absolute top-24 left-24 animate-float-sophisticated">
+              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
+                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
+              }`}>
+                <Brain className={`w-8 h-8 transition-colors duration-500 ${
+                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
+                }`} />
+              </div>
             </div>
-            <div className="absolute top-32 right-32 animate-float-medium">
-              <Lock className={`w-6 h-6 transition-colors duration-500 ${
-                theme === 'light' ? 'text-cyber-blue/70' : 'text-cyber-blue/20'
-              }`} />
+            
+            {/* Threat Intelligence Eye */}
+            <div className="absolute top-36 right-36 animate-float-sophisticated-delayed">
+              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
+                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
+              }`}>
+                <Eye className={`w-7 h-7 transition-colors duration-500 ${
+                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
+                }`} />
+              </div>
             </div>
-            <div className="absolute bottom-40 left-1/4 animate-float-fast">
-              <Eye className={`w-7 h-7 transition-colors duration-500 ${
-                theme === 'light' ? 'text-cyber-blue/75' : 'text-cyber-blue/25'
-              }`} />
+            
+            {/* Network Security Shield */}
+            <div className="absolute bottom-44 left-1/4 animate-float-sophisticated-slow">
+              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
+                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
+              }`}>
+                <Shield className={`w-8 h-8 transition-colors duration-500 ${
+                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
+                }`} />
+              </div>
             </div>
-            <div className="absolute top-1/3 right-1/4 animate-float-slow">
-              <Server className={`w-6 h-6 transition-colors duration-500 ${
-                theme === 'light' ? 'text-cyber-blue/70' : 'text-cyber-blue/20'
-              }`} />
+            
+            {/* Data Protection Lock */}
+            <div className="absolute top-1/3 right-1/4 animate-float-sophisticated-medium">
+              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
+                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
+              }`}>
+                <Lock className={`w-6 h-6 transition-colors duration-500 ${
+                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
+                }`} />
+              </div>
             </div>
-            <div className="absolute bottom-1/3 right-20 animate-float-medium">
-              <Network className={`w-8 h-8 transition-colors duration-500 ${
-                theme === 'light' ? 'text-cyber-blue/80' : 'text-cyber-blue/30'
-              }`} />
+            
+            {/* Infrastructure Server */}
+            <div className="absolute bottom-1/3 right-24 animate-float-sophisticated-fast">
+              <div className={`p-2 rounded-full bg-cyber-blue/20 backdrop-blur-sm ${
+                theme === 'light' ? 'bg-cyber-blue/30' : 'bg-cyber-blue/20'
+              }`}>
+                <Server className={`w-7 h-7 transition-colors duration-500 ${
+                  theme === 'light' ? 'text-cyber-blue/90' : 'text-cyber-blue/50'
+                }`} />
+              </div>
             </div>
           </div>
 
@@ -257,31 +316,77 @@ const Index = () => {
             }`}></div>
           </div>
 
-          {/* Rotating Hexagons */}
+          {/* Cybersecurity Infrastructure Elements */}
+          <div className="absolute inset-0">
+            {/* Firewall Protection Grid */}
+            <div className="absolute top-1/4 left-1/4 w-40 h-40">
+              <div className={`absolute inset-0 border border-cyber-blue/40 rounded-lg animate-firewall-pulse transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/70' : 'border-cyber-blue/30'
+              }`}></div>
+              <div className={`absolute inset-2 border border-cyber-blue/30 rounded-lg animate-firewall-pulse-delayed transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/60' : 'border-cyber-blue/20'
+              }`}></div>
+              <div className={`absolute inset-4 border border-cyber-blue/20 rounded-lg animate-firewall-pulse-slow transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/50' : 'border-cyber-blue/15'
+              }`}></div>
+            </div>
+            
+            {/* Data Encryption Flow */}
+            <div className="absolute top-1/3 right-1/3 w-32 h-32">
+              <div className={`absolute inset-0 border border-cyber-blue/50 rounded-full animate-encryption-spin transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/80' : 'border-cyber-blue/40'
+              }`}></div>
+              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 border border-cyber-blue/40 rounded-full animate-encryption-spin-reverse transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/70' : 'border-cyber-blue/30'
+              }`}></div>
+            </div>
+            
+            {/* Network Security Nodes */}
+            <div className="absolute bottom-1/4 left-1/3 w-36 h-36">
+              {[...Array(6)].map((_, i) => (
+                <div
+                  key={i}
+                  className={`absolute w-3 h-3 bg-cyber-blue/60 rounded-full animate-node-pulse transition-colors duration-500 ${
+                    theme === 'light' ? 'bg-cyber-blue/80' : 'bg-cyber-blue/40'
+                  }`}
+                  style={{
+                    left: `${50 + 30 * Math.cos(i * Math.PI / 3)}%`,
+                    top: `${50 + 30 * Math.sin(i * Math.PI / 3)}%`,
+                    animationDelay: `${i * 0.3}s`,
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Cybersecurity Hexagon Network */}
           <div className="absolute inset-0">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className={`w-64 h-64 border rounded-full animate-spin-slow transition-colors duration-500 ${
-                theme === 'light' ? 'border-cyber-blue/60' : 'border-cyber-blue/10'
+              <div className={`w-72 h-72 border border-cyber-blue/30 rounded-full animate-cyber-hexagon transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/60' : 'border-cyber-blue/20'
               }`}></div>
-              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border rounded-full animate-spin-medium transition-colors duration-500 ${
-                theme === 'light' ? 'border-cyber-blue/65' : 'border-cyber-blue/15'
+              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-56 h-56 border border-cyber-blue/40 rounded-full animate-cyber-hexagon-reverse transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/70' : 'border-cyber-blue/30'
               }`}></div>
-              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border rounded-full animate-spin-fast transition-colors duration-500 ${
-                theme === 'light' ? 'border-cyber-blue/70' : 'border-cyber-blue/20'
+              <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 border border-cyber-blue/50 rounded-full animate-cyber-hexagon-slow transition-colors duration-500 ${
+                theme === 'light' ? 'border-cyber-blue/80' : 'border-cyber-blue/40'
               }`}></div>
             </div>
           </div>
 
-          {/* Glowing Orbs */}
+          {/* Advanced Glowing Security Orbs */}
           <div className="absolute inset-0">
-            <div className={`absolute top-1/4 left-1/3 w-4 h-4 rounded-full animate-glow-pulse transition-colors duration-500 ${
-              theme === 'light' ? 'bg-cyber-blue/85' : 'bg-cyber-blue/40'
+            <div className={`absolute top-1/4 left-1/3 w-5 h-5 rounded-full animate-glow-pulse-sophisticated transition-colors duration-500 ${
+              theme === 'light' ? 'bg-cyber-blue/90' : 'bg-cyber-blue/60'
             }`}></div>
-            <div className={`absolute top-1/2 right-1/4 w-3 h-3 rounded-full animate-glow-pulse-delayed transition-colors duration-500 ${
-              theme === 'light' ? 'bg-cyber-blue/80' : 'bg-cyber-blue/30'
+            <div className={`absolute top-1/2 right-1/4 w-4 h-4 rounded-full animate-glow-pulse-sophisticated-delayed transition-colors duration-500 ${
+              theme === 'light' ? 'bg-cyber-blue/85' : 'bg-cyber-blue/50'
             }`}></div>
-            <div className={`absolute bottom-1/3 left-1/2 w-5 h-5 rounded-full animate-glow-pulse-slow transition-colors duration-500 ${
-              theme === 'light' ? 'bg-cyber-blue/90' : 'bg-cyber-blue/50'
+            <div className={`absolute bottom-1/3 left-1/2 w-6 h-6 rounded-full animate-glow-pulse-sophisticated-slow transition-colors duration-500 ${
+              theme === 'light' ? 'bg-cyber-blue/95' : 'bg-cyber-blue/70'
+            }`}></div>
+            <div className={`absolute top-1/3 right-1/3 w-3 h-3 rounded-full animate-glow-pulse-sophisticated-fast transition-colors duration-500 ${
+              theme === 'light' ? 'bg-cyber-blue/80' : 'bg-cyber-blue/45'
             }`}></div>
           </div>
         </div>
