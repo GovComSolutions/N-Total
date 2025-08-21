@@ -392,9 +392,9 @@ const Index = () => {
         </div>
         
         <div className="relative z-10 container mx-auto px-6 text-center">
-          <Badge className="mb-6 text-sm bg-cyber-blue/20 text-cyber-blue border-cyber-blue animate-fade-in-up">
-            Industry-Leading Cybersecurity Solutions
-          </Badge>
+                     <Badge className="badge-premium mb-6 text-sm px-4 py-2 animate-fade-in-up">
+             Industry-Leading Cybersecurity Solutions
+           </Badge>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up-delayed">
             Securing Tomorrow's
@@ -426,9 +426,9 @@ const Index = () => {
       <section id="services" className="py-24 bg-surface/50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-cyber-blue/20 text-cyber-blue border-cyber-blue">
-              Our Core Solutions
-            </Badge>
+                         <Badge className="badge-premium mb-4 px-4 py-2">
+               Our Core Solutions
+             </Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Comprehensive Cybersecurity Services
             </h2>
@@ -470,31 +470,40 @@ const Index = () => {
                       <span>Automated reporting and dashboard generation</span>
                     </div>
                   </div>
-                  <Button variant="cyber" className="mt-6">Learn More</Button>
+                  <Button className="btn-premium mt-6 px-6 py-3">Learn More</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Key Capabilities</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Brain className="w-5 h-5 text-cyber-blue" />
-                      <span>Machine Learning Risk Models</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <BarChart3 className="w-5 h-5 text-cyber-blue" />
-                      <span>Predictive Analytics</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Eye className="w-5 h-5 text-cyber-blue" />
-                      <span>Continuous Monitoring</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <FileText className="w-5 h-5 text-cyber-blue" />
-                      <span>Automated Compliance</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-service p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Key Capabilities</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Brain className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Machine Learning Risk Models</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <BarChart3 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Predictive Analytics</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Eye className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Continuous Monitoring</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <FileText className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Automated Compliance</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -523,31 +532,40 @@ const Index = () => {
                       <span>Continuous learning and updates</span>
                     </div>
                   </div>
-                  <Button variant="cyber" className="mt-6">View Programs</Button>
+                                     <Button className="btn-premium mt-6 px-6 py-3">View Programs</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Training Programs</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <GraduationCap className="w-5 h-5 text-cyber-blue" />
-                      <span>Security Awareness Training</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Technical Skills Development</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Award className="w-5 h-5 text-cyber-blue" />
-                      <span>Certification Preparation</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Executive Security Training</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-service p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Training Programs</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <GraduationCap className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Security Awareness Training</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Technical Skills Development</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Award className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Certification Preparation</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Executive Security Training</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -578,29 +596,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Get Consultation</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Advisory Services</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Target className="w-5 h-5 text-cyber-blue" />
-                      <span>Security Strategy Development</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <TrendingUp className="w-5 h-5 text-cyber-blue" />
-                      <span>Risk Assessment & Management</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Building2 className="w-5 h-5 text-cyber-blue" />
-                      <span>Program Optimization</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users2 className="w-5 h-5 text-cyber-blue" />
-                      <span>Executive Coaching</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-service p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Advisory Services</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Target className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Security Strategy Development</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <TrendingUp className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Risk Assessment & Management</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Program Optimization</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Executive Coaching</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -631,29 +658,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Explore Solutions</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">OT Security Features</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Server className="w-5 h-5 text-cyber-blue" />
-                      <span>ICS Security Hardening</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Network className="w-5 h-5 text-cyber-blue" />
-                      <span>Network Segmentation</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Database className="w-5 h-5 text-cyber-blue" />
-                      <span>Asset Management</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <AlertTriangle className="w-5 h-5 text-cyber-blue" />
-                      <span>Threat Detection</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-service p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">OT Security Features</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Server className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">ICS Security Hardening</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Network className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Network Segmentation</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Asset Management</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <AlertTriangle className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Threat Detection</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
           </Tabs>
@@ -949,29 +985,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Download Papers</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Featured Papers</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Star className="w-5 h-5 text-cyber-blue" />
-                      <span>Most Downloaded</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <TrendingUp className="w-5 h-5 text-cyber-blue" />
-                      <span>Trending Topics</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Clock className="w-5 h-5 text-cyber-blue" />
-                      <span>Latest Research</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Industry Focus</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-resource p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Featured Papers</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Star className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Most Downloaded</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <TrendingUp className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Trending Topics</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Clock className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Latest Research</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Industry Focus</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1002,29 +1047,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Access Tools</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Tool Categories</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Zap className="w-5 h-5 text-cyber-blue" />
-                      <span>Assessment Tools</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Calculator className="w-5 h-5 text-cyber-blue" />
-                      <span>Calculators</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-cyber-blue" />
-                      <span>Checklists</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <BarChart3 className="w-5 h-5 text-cyber-blue" />
-                      <span>Analytics</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-resource p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Tool Categories</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Zap className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Assessment Tools</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Calculator className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Calculators</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <CheckCircle className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Checklists</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <BarChart3 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Analytics</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1055,29 +1109,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Read Insights</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Content Types</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <FileText className="w-5 h-5 text-cyber-blue" />
-                      <span>Blog Posts</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <BarChart3 className="w-5 h-5 text-cyber-blue" />
-                      <span>Reports</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Interviews</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <AlertTriangle className="w-5 h-5 text-cyber-blue" />
-                      <span>Alerts</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium-resource p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Content Types</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <FileText className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Blog Posts</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <BarChart3 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Reports</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Interviews</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <AlertTriangle className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Alerts</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
           </Tabs>
@@ -1102,205 +1165,220 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Case Study 1 */}
-            <Card className="bg-gradient-card border-border hover:shadow-cyber transition-all duration-300 hover:scale-105">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-2">
-                  <Building2 className="w-5 h-5 text-cyber-blue" />
-                  <Badge variant="outline" className="text-xs">Healthcare</Badge>
-                </div>
-                <CardTitle className="text-xl">Regional Hospital Network</CardTitle>
-                <CardDescription>
-                  Achieved 100% HIPAA compliance and reduced security incidents by 85%
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Security Incidents:</span>
-                    <span className="font-semibold text-cyber-blue">↓ 85%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Compliance Score:</span>
-                    <span className="font-semibold text-cyber-blue">↑ 100%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Response Time:</span>
-                    <span className="font-semibold text-cyber-blue">↓ 60%</span>
-                  </div>
-                </div>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="cyber" className="w-full">Read Full Case Study</Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl text-cyber-blue">Regional Hospital Network Cybersecurity Transformation</DialogTitle>
-                      <DialogDescription className="text-lg">
-                        How a 500-bed hospital network achieved complete HIPAA compliance and dramatically improved security posture.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-6 text-left">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Challenge</h3>
-                        <p className="text-muted-foreground">
-                          The hospital network faced increasing cybersecurity threats, HIPAA compliance challenges, and a growing number of medical device vulnerabilities. With patient data security at stake, they needed a comprehensive solution.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Solution</h3>
-                        <p className="text-muted-foreground">
-                          Implemented our AI-enabled GRC platform, medical device security framework, and comprehensive staff training program. Deployed 24/7 monitoring and incident response capabilities.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Results</h3>
-                        <ul className="space-y-2 text-muted-foreground">
-                          <li>• 85% reduction in security incidents</li>
-                          <li>• 100% HIPAA compliance achievement</li>
-                          <li>• 60% faster incident response time</li>
-                          <li>• $2.3M in potential breach costs avoided</li>
-                          <li>• Enhanced patient trust and satisfaction</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </CardContent>
-            </Card>
+                         <Card className="card-premium-case-study p-8">
+               <CardHeader className="pb-6">
+                 <div className="flex items-center space-x-3 mb-4">
+                   <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                     <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                   </div>
+                   <Badge variant="outline" className="badge-premium text-sm px-3 py-1">Healthcare</Badge>
+                 </div>
+                 <CardTitle className="text-2xl font-bold mb-3">Regional Hospital Network</CardTitle>
+                 <CardDescription className="text-lg text-muted-foreground">
+                   Achieved 100% HIPAA compliance and reduced security incidents by 85%
+                 </CardDescription>
+               </CardHeader>
+               <CardContent className="space-y-6">
+                 <div className="grid grid-cols-1 gap-4">
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Security Incidents:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↓ 85%</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Compliance Score:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↑ 100%</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Response Time:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↓ 60%</span>
+                   </div>
+                 </div>
+                 <Dialog>
+                   <DialogTrigger asChild>
+                     <Button className="btn-premium w-full py-3 text-lg font-semibold">
+                       Read Full Case Study
+                       <ChevronRight className="ml-2 w-5 h-5" />
+                     </Button>
+                   </DialogTrigger>
+                   <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                     <DialogHeader>
+                       <DialogTitle className="text-2xl text-cyber-blue">Regional Hospital Network Cybersecurity Transformation</DialogTitle>
+                       <DialogDescription className="text-lg">
+                         How a 500-bed hospital network achieved complete HIPAA compliance and dramatically improved security posture.
+                       </DialogDescription>
+                     </DialogHeader>
+                     <div className="space-y-6 text-left">
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Challenge</h3>
+                         <p className="text-muted-foreground">
+                           The hospital network faced increasing cybersecurity threats, HIPAA compliance challenges, and a growing number of medical device vulnerabilities. With patient data security at stake, they needed a comprehensive solution.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Solution</h3>
+                         <p className="text-muted-foreground">
+                           Implemented our AI-enabled GRC platform, medical device security framework, and comprehensive staff training program. Deployed 24/7 monitoring and incident response capabilities.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Results</h3>
+                         <ul className="space-y-2 text-muted-foreground">
+                           <li>• 85% reduction in security incidents</li>
+                           <li>• 100% HIPAA compliance achievement</li>
+                           <li>• 60% faster incident response time</li>
+                           <li>• $2.3M in potential breach costs avoided</li>
+                           <li>• Enhanced patient trust and satisfaction</li>
+                         </ul>
+                       </div>
+                     </div>
+                   </DialogContent>
+                 </Dialog>
+               </CardContent>
+             </Card>
 
             {/* Case Study 2 */}
-            <Card className="bg-gradient-card border-border hover:shadow-cyber transition-all duration-300 hover:scale-105">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-2">
-                  <Server className="w-5 h-5 text-cyber-blue" />
-                  <Badge variant="outline" className="text-xs">Manufacturing</Badge>
-                </div>
-                <CardTitle className="text-xl">Global Manufacturing Corp</CardTitle>
-                <CardDescription>
-                  Protected critical infrastructure and prevented $15M in potential losses
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Downtime:</span>
-                    <span className="font-semibold text-cyber-blue">↓ 95%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Threat Detection:</span>
-                    <span className="font-semibold text-cyber-blue">↑ 99.9%</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Cost Savings:</span>
-                    <span className="font-semibold text-cyber-blue">$15M</span>
-                  </div>
-                </div>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="cyber" className="w-full">Read Full Case Study</Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl text-cyber-blue">Global Manufacturing Corp OT Security Success</DialogTitle>
-                      <DialogDescription className="text-lg">
-                        How a Fortune 500 manufacturer secured their operational technology and prevented catastrophic cyber attacks.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-6 text-left">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Challenge</h3>
-                        <p className="text-muted-foreground">
-                          The company's industrial control systems were vulnerable to cyber attacks that could halt production across 15 global facilities, potentially causing millions in losses.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Solution</h3>
-                        <p className="text-muted-foreground">
-                          Implemented comprehensive OT cybersecurity framework including network segmentation, asset discovery, continuous monitoring, and incident response planning.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Results</h3>
-                        <ul className="space-y-2 text-muted-foreground">
-                          <li>• 95% reduction in production downtime</li>
-                          <li>• 99.9% threat detection rate</li>
-                          <li>• $15M in potential losses prevented</li>
-                          <li>• Enhanced supply chain security</li>
-                          <li>• Improved regulatory compliance</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </CardContent>
-            </Card>
+                         <Card className="card-premium-case-study p-8">
+               <CardHeader className="pb-6">
+                 <div className="flex items-center space-x-3 mb-4">
+                   <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                     <Server className="w-6 h-6 text-cyber-blue icon-premium" />
+                   </div>
+                   <Badge variant="outline" className="badge-premium text-sm px-3 py-1">Manufacturing</Badge>
+                 </div>
+                 <CardTitle className="text-2xl font-bold mb-3">Global Manufacturing Corp</CardTitle>
+                 <CardDescription className="text-lg text-muted-foreground">
+                   Protected critical infrastructure and prevented $15M in potential losses
+                 </CardDescription>
+               </CardHeader>
+               <CardContent className="space-y-6">
+                 <div className="grid grid-cols-1 gap-4">
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Downtime:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↓ 95%</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Threat Detection:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↑ 99.9%</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Cost Savings:</span>
+                     <span className="font-bold text-cyber-blue text-lg">$15M</span>
+                   </div>
+                 </div>
+                 <Dialog>
+                   <DialogTrigger asChild>
+                     <Button className="btn-premium w-full py-3 text-lg font-semibold">
+                       Read Full Case Study
+                       <ChevronRight className="ml-2 w-5 h-5" />
+                     </Button>
+                   </DialogTrigger>
+                   <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                     <DialogHeader>
+                       <DialogTitle className="text-2xl text-cyber-blue">Global Manufacturing Corp OT Security Success</DialogTitle>
+                       <DialogDescription className="text-lg">
+                         How a Fortune 500 manufacturer secured their operational technology and prevented catastrophic cyber attacks.
+                       </DialogDescription>
+                     </DialogHeader>
+                     <div className="space-y-6 text-left">
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Challenge</h3>
+                         <p className="text-muted-foreground">
+                           The company's industrial control systems were vulnerable to cyber attacks that could halt production across 15 global facilities, potentially causing millions in losses.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Solution</h3>
+                         <p className="text-muted-foreground">
+                           Implemented comprehensive OT cybersecurity framework including network segmentation, asset discovery, continuous monitoring, and incident response planning.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Results</h3>
+                         <ul className="space-y-2 text-muted-foreground">
+                           <li>• 95% reduction in production downtime</li>
+                           <li>• 99.9% threat detection rate</li>
+                           <li>• $15M in potential losses prevented</li>
+                           <li>• Enhanced supply chain security</li>
+                           <li>• Improved regulatory compliance</li>
+                         </ul>
+                       </div>
+                     </div>
+                   </DialogContent>
+                 </Dialog>
+               </CardContent>
+             </Card>
 
             {/* Case Study 3 */}
-            <Card className="bg-gradient-card border-border hover:shadow-cyber transition-all duration-300 hover:scale-105">
-              <CardHeader>
-                <div className="flex items-center space-x-2 mb-2">
-                  <Database className="w-5 h-5 text-cyber-blue" />
-                  <Badge variant="outline" className="text-xs">Financial</Badge>
-                </div>
-                <CardTitle className="text-xl">FinTech Startup</CardTitle>
-                <CardDescription>
-                  Achieved SOC 2 compliance in 90 days and secured $50M funding
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Compliance Time:</span>
-                    <span className="font-semibold text-cyber-blue">90 days</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Funding Secured:</span>
-                    <span className="font-semibold text-cyber-blue">$50M</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Customer Trust:</span>
-                    <span className="font-semibold text-cyber-blue">↑ 300%</span>
-                  </div>
-                </div>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="cyber" className="w-full">Read Full Case Study</Button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl text-cyber-blue">FinTech Startup Security Transformation</DialogTitle>
-                      <DialogDescription className="text-lg">
-                        How a rapidly growing fintech company achieved SOC 2 compliance and secured major funding through enhanced security posture.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <div className="space-y-6 text-left">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Challenge</h3>
-                        <p className="text-muted-foreground">
-                          The startup needed to achieve SOC 2 compliance quickly to secure Series B funding and build customer trust in their financial platform.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Solution</h3>
-                        <p className="text-muted-foreground">
-                          Implemented our strategic advisory services, compliance framework, and security program development to achieve SOC 2 Type II compliance in record time.
-                        </p>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Results</h3>
-                        <ul className="space-y-2 text-muted-foreground">
-                          <li>• SOC 2 compliance achieved in 90 days</li>
-                          <li>• $50M Series B funding secured</li>
-                          <li>• 300% increase in customer trust scores</li>
-                          <li>• Enhanced investor confidence</li>
-                          <li>• Scalable security foundation established</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </CardContent>
-            </Card>
+                         <Card className="card-premium-case-study p-8">
+               <CardHeader className="pb-6">
+                 <div className="flex items-center space-x-3 mb-4">
+                   <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                     <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                   </div>
+                   <Badge variant="outline" className="badge-premium text-sm px-3 py-1">Financial</Badge>
+                 </div>
+                 <CardTitle className="text-2xl font-bold mb-3">FinTech Startup</CardTitle>
+                 <CardDescription className="text-lg text-muted-foreground">
+                   Achieved SOC 2 compliance in 90 days and secured $50M funding
+                 </CardDescription>
+               </CardHeader>
+               <CardContent className="space-y-6">
+                 <div className="grid grid-cols-1 gap-4">
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Compliance Time:</span>
+                     <span className="font-bold text-cyber-blue text-lg">90 days</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Funding Secured:</span>
+                     <span className="font-bold text-cyber-blue text-lg">$50M</span>
+                   </div>
+                   <div className="flex justify-between items-center p-4 bg-cyber-blue/5 rounded-lg border border-cyber-blue/10">
+                     <span className="text-muted-foreground font-medium">Customer Trust:</span>
+                     <span className="font-bold text-cyber-blue text-lg">↑ 300%</span>
+                   </div>
+                 </div>
+                 <Dialog>
+                   <DialogTrigger asChild>
+                     <Button className="btn-premium w-full py-3 text-lg font-semibold">
+                       Read Full Case Study
+                       <ChevronRight className="ml-2 w-5 h-5" />
+                     </Button>
+                   </DialogTrigger>
+                   <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                     <DialogHeader>
+                       <DialogTitle className="text-2xl text-cyber-blue">FinTech Startup Security Transformation</DialogTitle>
+                       <DialogDescription className="text-lg">
+                         How a rapidly growing fintech company achieved SOC 2 compliance and secured major funding through enhanced security posture.
+                       </DialogDescription>
+                     </DialogHeader>
+                     <div className="space-y-6 text-left">
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Challenge</h3>
+                         <p className="text-muted-foreground">
+                           The startup needed to achieve SOC 2 compliance quickly to secure Series B funding and build customer trust in their financial platform.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Solution</h3>
+                         <p className="text-muted-foreground">
+                           Implemented our strategic advisory services, compliance framework, and security program development to achieve SOC 2 Type II compliance in record time.
+                         </p>
+                       </div>
+                       <div>
+                         <h3 className="text-xl font-semibold mb-3">Results</h3>
+                         <ul className="space-y-2 text-muted-foreground">
+                           <li>• SOC 2 compliance achieved in 90 days</li>
+                           <li>• $50M Series B funding secured</li>
+                           <li>• 300% increase in customer trust scores</li>
+                           <li>• Enhanced investor confidence</li>
+                           <li>• Scalable security foundation established</li>
+                         </ul>
+                       </div>
+                     </div>
+                   </DialogContent>
+                 </Dialog>
+               </CardContent>
+             </Card>
           </div>
         </div>
       </section>
@@ -1366,29 +1444,38 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Why Choose N-total?</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Mission-Critical Protection</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Brain className="w-5 h-5 text-cyber-blue" />
-                      <span>AI-Powered Innovation</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Trusted Partnerships</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Globe className="w-5 h-5 text-cyber-blue" />
-                      <span>Global Expertise</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Why Choose N-total?</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Mission-Critical Protection</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Brain className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">AI-Powered Innovation</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Trusted Partnerships</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Globe className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Global Expertise</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1419,29 +1506,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Meet Our Team</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Team Expertise</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Network Security</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Server className="w-5 h-5 text-cyber-blue" />
-                      <span>Cloud Security</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Database className="w-5 h-5 text-cyber-blue" />
-                      <span>Data Protection</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Brain className="w-5 h-5 text-cyber-blue" />
-                      <span>AI & ML Security</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Team Expertise</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Network Security</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Server className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Cloud Security</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Database className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Data Protection</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Brain className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">AI & ML Security</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1472,29 +1568,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">View Certifications</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Compliance Standards</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Lock className="w-5 h-5 text-cyber-blue" />
-                      <span>HIPAA Compliance</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>PCI DSS</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <FileText className="w-5 h-5 text-cyber-blue" />
-                      <span>SOX Compliance</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Building2 className="w-5 h-5 text-cyber-blue" />
-                      <span>GLBA Compliance</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Compliance Standards</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Lock className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">HIPAA Compliance</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">PCI DSS</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <FileText className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">SOX Compliance</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">GLBA Compliance</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1525,29 +1630,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Our Partners</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Partnership Types</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Building2 className="w-5 h-5 text-cyber-blue" />
-                      <span>Technology Vendors</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <GraduationCap className="w-5 h-5 text-cyber-blue" />
-                      <span>Academic Institutions</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Government Agencies</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Globe className="w-5 h-5 text-cyber-blue" />
-                      <span>Industry Groups</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Partnership Types</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Technology Vendors</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <GraduationCap className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Academic Institutions</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Government Agencies</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Globe className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Industry Groups</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
           </Tabs>
@@ -1799,31 +1913,32 @@ const Index = () => {
                     </div>
                   </div>
 
-                  <Card className="bg-gradient-card border-border p-6">
-                    <CardHeader className="px-0 pt-0">
-                      <CardTitle className="text-lg text-cyber-blue">Why Choose N-total?</CardTitle>
-                    </CardHeader>
-                    <CardContent className="px-0">
-                      <ul className="space-y-3 text-muted-foreground">
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
-                          <span>Industry-leading expertise and innovation</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
-                          <span>Tailored solutions for your unique needs</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
-                          <span>24/7 support and monitoring</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <div className="w-2 h-2 bg-cyber-blue rounded-full"></div>
-                          <span>Proven track record with enterprises</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
+                                     <Card className="card-premium p-6">
+                     <CardHeader className="px-0 pt-0 pb-4">
+                       <CardTitle className="text-xl text-cyber-blue font-bold">Why Choose N-total?</CardTitle>
+                       <div className="w-12 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-2"></div>
+                     </CardHeader>
+                     <CardContent className="px-0">
+                       <ul className="space-y-4">
+                         <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                           <div className="w-3 h-3 bg-cyber-blue rounded-full shadow-sm"></div>
+                           <span className="font-medium">Industry-leading expertise and innovation</span>
+                         </li>
+                         <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                           <div className="w-3 h-3 bg-cyber-blue rounded-full shadow-sm"></div>
+                           <span className="font-medium">Tailored solutions for your unique needs</span>
+                         </li>
+                         <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                           <div className="w-3 h-3 bg-cyber-blue rounded-full shadow-sm"></div>
+                           <span className="font-medium">24/7 support and monitoring</span>
+                         </li>
+                         <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                           <div className="w-3 h-3 bg-cyber-blue rounded-full shadow-sm"></div>
+                           <span className="font-medium">Proven track record with enterprises</span>
+                         </li>
+                       </ul>
+                     </CardContent>
+                   </Card>
                 </div>
               </div>
             </TabsContent>
@@ -1855,29 +1970,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Schedule Demo</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Demo Options</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Users className="w-5 h-5 text-cyber-blue" />
-                      <span>Executive Overview</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Shield className="w-5 h-5 text-cyber-blue" />
-                      <span>Technical Deep Dive</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Building2 className="w-5 h-5 text-cyber-blue" />
-                      <span>Industry-Specific Solutions</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Target className="w-5 h-5 text-cyber-blue" />
-                      <span>Use Case Scenarios</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Demo Options</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Users className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Executive Overview</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Shield className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Technical Deep Dive</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Building2 className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Industry-Specific Solutions</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Target className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Use Case Scenarios</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
 
@@ -1908,29 +2032,38 @@ const Index = () => {
                   </div>
                   <Button variant="cyber" className="mt-6">Contact Support</Button>
                 </div>
-                <Card className="bg-gradient-card border-border p-6">
-                  <CardHeader>
-                    <CardTitle className="text-xl text-cyber-blue">Support Channels</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-cyber-blue" />
-                      <span>Email Support</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-cyber-blue" />
-                      <span>Phone Support</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <MessageSquare className="w-5 h-5 text-cyber-blue" />
-                      <span>Live Chat</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="w-5 h-5 text-cyber-blue" />
-                      <span>Video Support</span>
-                    </div>
-                  </CardContent>
-                </Card>
+                                 <Card className="card-premium p-8">
+                   <CardHeader className="pb-6">
+                     <CardTitle className="text-2xl text-cyber-blue font-bold">Support Channels</CardTitle>
+                     <div className="w-16 h-1 bg-gradient-to-r from-cyber-blue to-cyber-blue/60 rounded-full mt-3"></div>
+                   </CardHeader>
+                   <CardContent className="space-y-6">
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Mail className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Email Support</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Phone className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Phone Support</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <MessageSquare className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Live Chat</span>
+                     </div>
+                     <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-cyber-blue/5 transition-colors duration-300">
+                       <div className="p-2 bg-cyber-blue/10 rounded-lg">
+                         <Calendar className="w-6 h-6 text-cyber-blue icon-premium" />
+                       </div>
+                       <span className="font-medium">Video Support</span>
+                     </div>
+                   </CardContent>
+                 </Card>
               </div>
             </TabsContent>
           </Tabs>
