@@ -311,8 +311,18 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-surface/50">
-        <div className="container mx-auto px-6">
+      <section id="services" className="py-24 relative overflow-hidden">
+        {/* High-Resolution Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/2ndBk.png" 
+            alt="Cybersecurity Services Background" 
+            className="w-full h-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/90 to-background/80"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-6">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-cyber-blue/20 text-cyber-blue border-cyber-blue">
               Our Core Solutions
