@@ -325,22 +325,7 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Services Content with Left Image */}
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {/* Left Side - Image */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-24">
-                <img 
-                  src="/2ndBk.png" 
-                  alt="Cybersecurity Services" 
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </div>
-            </div>
-
-            {/* Right Side - Tabs Content */}
-            <div className="lg:col-span-2">
-              <Tabs defaultValue="ai-grc" className="w-full">
+          <Tabs defaultValue="ai-grc" className="w-full">
             <TabsList className="grid w-full grid-cols-4 bg-surface/50 p-1">
               <TabsTrigger value="ai-grc" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">AI-enabled GRC</TabsTrigger>
               <TabsTrigger value="training" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Training</TabsTrigger>
@@ -559,9 +544,7 @@ const Index = () => {
                 </Card>
               </div>
             </TabsContent>
-              </Tabs>
-            </div>
-          </div>
+          </Tabs>
         </div>
       </section>
 
