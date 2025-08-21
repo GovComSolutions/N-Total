@@ -92,7 +92,14 @@ const Index = () => {
         {/* Navigation */}
         <nav className="fixed top-8 w-full z-40 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-2xl font-bold text-cyber-blue">N-total Cybersecurity</div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/NTotalLogo.png" 
+              alt="N-Total Cybersecurity Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <div className="text-2xl font-bold text-cyber-blue">N-total Cybersecurity</div>
+          </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
