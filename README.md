@@ -1,73 +1,168 @@
-# Welcome to your Lovable project
+# N-Total Cybersecurity Launchpad
 
-## Project info
+## 🚀 Professional Cybersecurity Platform
 
-**URL**: https://lovable.dev/projects/1b9b6524-2586-4d15-8572-4402afe06ec1
+**N-Total Cybersecurity LLC** delivers innovative, AI-enabled solutions that address today's complex security challenges and prepare organizations for tomorrow's threats.
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **AI-Enabled GRC**: Governance, Risk & Compliance with intelligent automation
+- **Threat Intelligence**: Real-time cybersecurity threat monitoring and alerts
+- **Training & Advisory**: Comprehensive cybersecurity education and consulting
+- **OT Security**: Operational Technology security solutions
+- **Interactive Chatbot**: AI-powered cybersecurity assistance
+- **Responsive Design**: Optimized for all devices and screen sizes
 
-**Use Lovable**
+## 🛠️ Technologies
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1b9b6524-2586-4d15-8572-4402afe06ec1) and start prompting.
+This project is built with modern, enterprise-grade technologies:
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Frontend**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **UI Components**: shadcn/ui with Tailwind CSS
+- **Styling**: Tailwind CSS with custom cybersecurity theme
+- **State Management**: React Hooks and Context API
+- **Deployment**: AWS Amplify ready
 
-**Use your preferred IDE**
+## 🚀 Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js 18+ and npm
+- Git for version control
 
-Follow these steps:
+### Local Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone https://github.com/GovComSolutions/N-Total.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd ntotal-cybersec-launchpad-main
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```sh
+# Create optimized production build
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview production build
+npm run preview
+```
 
-## What technologies are used for this project?
+## 🚀 Deployment
 
-This project is built with:
+### AWS Amplify Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This application is configured for AWS Amplify deployment:
 
-## How can I deploy this project?
+1. **Automatic Detection**: AWS Amplify will auto-detect the `amplify.yml` configuration
+2. **Build Process**: Uses `npm run build` to create production-ready files
+3. **Artifacts**: Serves files from the `dist/` directory
+4. **Caching**: Optimized caching for faster builds
 
-Simply open [Lovable](https://lovable.dev/projects/1b9b6524-2586-4d15-8572-4402afe06ec1) and click on Share -> Publish.
+See `AWS_AMPLIFY_DEPLOYMENT.md` for detailed deployment instructions.
 
-## Can I connect a custom domain to my Lovable project?
+### Manual Deployment
 
-Yes, you can!
+You can also deploy to any static hosting service:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- **Netlify**: Drag and drop the `dist/` folder
+- **Vercel**: Connect your GitHub repository
+- **GitHub Pages**: Enable GitHub Pages in repository settings
+- **AWS S3**: Upload `dist/` contents to an S3 bucket
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## 📁 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   └── ThreatIntelligence/  # Threat monitoring components
+├── pages/              # Main application pages
+├── hooks/              # Custom React hooks
+├── services/           # API and external service integrations
+├── types/              # TypeScript type definitions
+└── assets/             # Images and static assets
+```
+
+## 🎨 Customization
+
+### Theme Configuration
+
+The application includes a sophisticated cybersecurity theme with:
+
+- **Color Palette**: Professional cyber-blue color scheme
+- **Animations**: Smooth transitions and hover effects
+- **Typography**: Modern, readable fonts
+- **Responsive Design**: Mobile-first approach
+
+### Component Customization
+
+All components are built with shadcn/ui and can be easily customized:
+
+- Modify `tailwind.config.ts` for theme changes
+- Update component variants in individual component files
+- Add new components following the established patterns
+
+## 🔧 Development Scripts
+
+```json
+{
+  "dev": "Start development server",
+  "build": "Build for production",
+  "preview": "Preview production build",
+  "lint": "Run ESLint",
+  "type-check": "Run TypeScript compiler",
+  "test": "Run unit tests"
+}
+```
+
+## 📊 Performance
+
+- **Bundle Size**: Optimized with code splitting
+- **Loading Speed**: Fast initial page load
+- **SEO**: Optimized for search engines
+- **Accessibility**: WCAG compliant components
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is proprietary software owned by N-Total Cybersecurity LLC.
+
+## 🆘 Support
+
+For support and questions:
+
+- **Email**: info@ntotal-cyber.com
+- **LinkedIn**: Connect with our team
+- **Documentation**: See `AWS_AMPLIFY_DEPLOYMENT.md` for deployment help
+
+## 🎯 Roadmap
+
+- [ ] Enhanced threat intelligence feeds
+- [ ] Advanced AI chatbot capabilities
+- [ ] Multi-language support
+- [ ] Advanced analytics dashboard
+- [ ] Integration with security tools
+- [ ] Mobile application
+
+---
+
+**Built with ❤️ by N-Total Cybersecurity LLC**
