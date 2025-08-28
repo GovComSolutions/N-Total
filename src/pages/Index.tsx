@@ -44,6 +44,22 @@ const Index = () => {
     }
   };
 
+  const handleScheduleDemo = () => {
+    setActiveContactTab("demo-request");
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleRequestAssessment = () => {
+    setActiveContactTab("contact-form");
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   if (!mounted) return <LoadingSpinner text="Initializing..." variant="cyber" />;
 
   return (
@@ -104,7 +120,13 @@ const Index = () => {
             <a href="#govcom-solutions" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Government & Compliance Solutions section">GovCom</a>
             <a href="#about" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to About section">About</a>
             <a href="#contact" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Contact section">Contact</a>
-            <Button variant="cyber" size="sm">Request Demo</Button>
+            <Button 
+              variant="cyber" 
+              size="sm"
+              onClick={handleScheduleDemo}
+            >
+              Request Demo
+            </Button>
             <Button
               variant="ghost"
               size="sm"
@@ -280,7 +302,12 @@ const Index = () => {
               Get Started Today
               <ChevronRight className="ml-2" />
             </Button>
-            <Button variant="cyber-outline" size="lg" className="text-lg px-8 py-4 animate-button-hover">
+            <Button 
+              variant="cyber-outline" 
+              size="lg" 
+              className="text-lg px-8 py-4 animate-button-hover"
+              onClick={handleScheduleDemo}
+            >
               Schedule Demo
               <Calendar className="ml-2" />
             </Button>
@@ -1918,7 +1945,12 @@ const Index = () => {
                           className="w-full px-4 py-3 bg-surface border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-cyber-blue text-foreground resize-none"
                         ></textarea>
                       </div>
-                      <Button variant="hero" size="lg" className="w-full">
+                      <Button 
+                        variant="hero" 
+                        size="lg" 
+                        className="w-full"
+                        onClick={handleRequestAssessment}
+                      >
                         Request Free Assessment
                         <ChevronRight className="ml-2" />
                       </Button>
@@ -2017,7 +2049,13 @@ const Index = () => {
                       <span>Follow-up consultation and next steps</span>
                     </div>
                   </div>
-                  <Button variant="cyber" className="mt-6">Schedule Demo</Button>
+                  <Button 
+                    variant="cyber" 
+                    className="mt-6"
+                    onClick={handleScheduleDemo}
+                  >
+                    Schedule Demo
+                  </Button>
                 </div>
                                  <Card className="card-premium p-8">
                    <CardHeader className="pb-6">
@@ -2079,7 +2117,13 @@ const Index = () => {
                       <span>Ongoing training and support</span>
                     </div>
                   </div>
-                  <Button variant="cyber" className="mt-6">Contact Support</Button>
+                  <Button 
+                    variant="cyber" 
+                    className="mt-6"
+                    onClick={handleRequestAssessment}
+                  >
+                    Contact Support
+                  </Button>
                 </div>
                                  <Card className="card-premium p-8">
                    <CardHeader className="pb-6">
