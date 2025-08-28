@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,17 +17,31 @@ import { useScrollTo } from "@/hooks/useScrollTo";
 import { ParticleSystem } from "@/components/ParticleSystem";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
+// Bulletproof threat intelligence - completely safe, never crashes
+import { BulletproofThreatTicker } from "@/components/ThreatIntelligence/BulletproofThreatIntelligence";
+import { EnhancedThreatDashboard } from "@/components/ThreatIntelligence/EnhancedThreatDashboard";
 
 // N-total Cybersecurity LLC - Professional Website
 const Index = () => {
   const { theme, mounted, toggleTheme, getCurrentTheme } = useTheme();
   const { scrollToTop } = useScrollTo();
+  const [activeContactTab, setActiveContactTab] = useState("contact-form");
+  // Bulletproof threat intelligence - no external dependencies, no crashes
+  // No need for useThreatFeed hook - everything is static and safe
 
   const getThemeIcon = () => {
     const currentTheme = getCurrentTheme();
     if (currentTheme === 'light') return <Sun className="w-4 h-4" />;
     if (currentTheme === 'dark') return <Moon className="w-4 h-4" />;
     return <Monitor className="w-4 h-4" />;
+  };
+
+  const handleGetStarted = () => {
+    setActiveContactTab("contact-form");
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   if (!mounted) return <LoadingSpinner text="Initializing..." variant="cyber" />;
@@ -82,9 +97,11 @@ const Index = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6" role="menubar">
+            <a href="#threat-intelligence" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Threat Intelligence section">Threat Intel</a>
             <a href="#services" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Services section">Services</a>
             <a href="#solutions" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Solutions section">Solutions</a>
             <a href="#resources" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Resources section">Resources</a>
+            <a href="#govcom-solutions" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Government & Compliance Solutions section">GovCom</a>
             <a href="#about" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to About section">About</a>
             <a href="#contact" className="text-foreground hover:text-cyber-blue transition-colors focus:outline-2 focus:outline-cyber-blue focus:outline-offset-2 rounded-sm" role="menuitem" aria-label="Navigate to Contact section">Contact</a>
             <Button variant="cyber" size="sm">Request Demo</Button>
@@ -123,6 +140,11 @@ const Index = () => {
           </div>
         </div>
       </nav>
+
+                  {/* Bulletproof Threat Ticker - Always safe, never crashes */}
+            <div className="fixed top-24 w-full z-30">
+              <BulletproofThreatTicker />
+            </div>
       
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -249,7 +271,12 @@ const Index = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-slower">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4 animate-button-pulse">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="text-lg px-8 py-4 animate-button-pulse"
+              onClick={handleGetStarted}
+            >
               Get Started Today
               <ChevronRight className="ml-2" />
             </Button>
@@ -262,6 +289,23 @@ const Index = () => {
           <div className="mt-12 text-sm text-muted-foreground animate-fade-in-up-slowest">
             Trusted by enterprises, SMBs, and government organizations
           </div>
+        </div>
+      </section>
+
+      {/* Threat Intelligence Feed Section */}
+      <section id="threat-intelligence" className="py-16 bg-gradient-to-br from-slate-50 to-cyber-blue/5 dark:from-slate-950 dark:to-cyber-blue/10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-cyber-blue mb-4">
+              Live Threat Intelligence Feed
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Stay ahead of cyber threats with our real-time intelligence feed. Get instant alerts, 
+              detailed analysis, and actionable insights from trusted sources worldwide.
+            </p>
+          </div>
+          
+                          <EnhancedThreatDashboard />
         </div>
       </section>
 
@@ -1834,7 +1878,7 @@ const Index = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="contact-form" className="w-full">
+          <Tabs value={activeContactTab} onValueChange={setActiveContactTab} className="w-full">
             <TabsList className="grid w-full grid-cols-3 bg-surface/50 p-1">
               <TabsTrigger value="contact-form" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Contact Form</TabsTrigger>
               <TabsTrigger value="demo-request" className="data-[state=active]:bg-cyber-blue data-[state=active]:text-white">Demo Request</TabsTrigger>
@@ -2075,6 +2119,253 @@ const Index = () => {
         </div>
       </section>
 
+      {/* GovCom Solutions Section */}
+      <section id="govcom-solutions" className="py-20 bg-gradient-to-br from-slate-50 to-cyber-blue/5">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-cyber-blue mb-4">
+              Government & Compliance Solutions
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive cybersecurity solutions designed specifically for government agencies, 
+              contractors, and organizations requiring strict compliance with federal regulations.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Federal Compliance */}
+            <Card className="card-premium p-6 h-full">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl text-cyber-blue font-bold">Federal Compliance</CardTitle>
+                <CardDescription>Meet strict federal cybersecurity requirements</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">FISMA compliance framework</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">FedRAMP authorization support</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">NIST Cybersecurity Framework</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">CMMC 2.0 compliance</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* DoD Contractors */}
+            <Card className="card-premium p-6 h-full">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center mb-4">
+                  <Target className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl text-cyber-blue font-bold">DoD Contractors</CardTitle>
+                <CardDescription>Specialized solutions for defense contractors</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">CMMC Level 1-3 certification</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">DFARS compliance requirements</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">NIST 800-171 implementation</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">Contract security requirements</span>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* State & Local Government */}
+            <Card className="card-premium p-6 h-full">
+              <CardHeader className="pb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-green-800 rounded-lg flex items-center justify-center mb-4">
+                  <Building2 className="w-6 h-6 text-white" />
+                </div>
+                <CardTitle className="text-xl text-cyber-blue font-bold">State & Local Government</CardTitle>
+                <CardDescription>Cybersecurity for municipal and state agencies</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">State-specific compliance</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">Municipal cybersecurity</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">Critical infrastructure protection</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <CheckCircle className="w-4 h-4 text-green-600" />
+                  <span className="text-sm">Emergency response systems</span>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Recommendations Section */}
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-border">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-cyber-blue mb-4">
+                Strategic Recommendations
+              </h3>
+              <p className="text-lg text-muted-foreground">
+                Expert guidance for government and compliance cybersecurity implementation
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Immediate Actions */}
+              <div>
+                <h4 className="text-xl font-semibold text-cyber-blue mb-4 flex items-center">
+                  <AlertTriangle className="w-5 h-5 mr-2 text-orange-500" />
+                  Immediate Actions (0-30 days)
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3 p-3 bg-orange-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Conduct cybersecurity assessment</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Identify current security posture and compliance gaps
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-orange-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Implement multi-factor authentication</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Secure all user access points immediately
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-orange-50 rounded-lg">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Update security policies</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Establish clear cybersecurity guidelines and procedures
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Strategic Planning */}
+              <div>
+                <h4 className="text-xl font-semibold text-cyber-blue mb-4 flex items-center">
+                  <Target className="w-5 h-5 mr-2 text-blue-500" />
+                  Strategic Planning (30-90 days)
+                </h4>
+                <div className="space-y-3">
+                  <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Develop compliance roadmap</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Create detailed timeline for achieving compliance requirements
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Implement security controls</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Deploy technical and administrative security measures
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3 p-3 bg-blue-50 rounded-lg">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-medium">Staff training program</span>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Educate personnel on cybersecurity best practices
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Long-term Strategy */}
+            <div className="mt-8 p-6 bg-gradient-to-r from-cyber-blue/5 to-cyber-blue/10 rounded-xl">
+              <h4 className="text-xl font-semibold text-cyber-blue mb-4 flex items-center">
+                <TrendingUp className="w-5 h-5 mr-2 text-cyber-blue" />
+                Long-term Strategy (90+ days)
+              </h4>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <div className="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <ShieldCheck className="w-6 h-6 text-cyber-blue" />
+                  </div>
+                  <h5 className="font-semibold text-cyber-blue mb-2">Continuous Monitoring</h5>
+                  <p className="text-sm text-muted-foreground">
+                    24/7 security monitoring and threat detection
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <div className="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Users2 className="w-6 h-6 text-cyber-blue" />
+                  </div>
+                  <h5 className="font-semibold text-cyber-blue mb-2">Incident Response</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Comprehensive incident response and recovery plans
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <div className="w-12 h-12 bg-cyber-blue/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <BarChart3 className="w-6 h-6 text-cyber-blue" />
+                  </div>
+                  <h5 className="font-semibold text-cyber-blue mb-2">Compliance Reporting</h5>
+                  <p className="text-sm text-muted-foreground">
+                    Automated compliance monitoring and reporting
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="text-center mt-8 pt-8 border-t border-border">
+              <h4 className="text-2xl font-bold text-cyber-blue mb-4">
+                Ready to Secure Your Government Operations?
+              </h4>
+              <p className="text-muted-foreground mb-6">
+                Get expert guidance and implementation support for your compliance requirements
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button variant="cyber" size="lg">
+                  Schedule Compliance Assessment
+                </Button>
+                <Button variant="outline" size="lg">
+                  Download Compliance Guide
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="py-12 border-t border-border">
         <div className="container mx-auto px-6">
@@ -2090,6 +2381,12 @@ const Index = () => {
             </div>
             <div className="mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
               © 2024 N-total Cybersecurity LLC. All rights reserved.
+            </div>
+            <div className="mt-4 text-xs text-muted-foreground/70">
+              Designed and Built by{' '}
+              <span className="font-medium text-cyber-blue hover:text-cyber-blue/80 transition-colors duration-300 cursor-pointer">
+                GovCom Solutions
+              </span>
             </div>
           </div>
         </div>
