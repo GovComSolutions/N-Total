@@ -2154,27 +2154,27 @@ ${name}`);
                               <button
                                 className="w-full text-left px-3 py-2 text-sm hover:bg-cyber-blue/10 rounded-md transition-colors flex items-center"
                                 onClick={() => {
-                                  // Local Outlook (Windows)
-                                  const subject = 'N-Total Cybersecurity Consultation';
-                                  const body = `Hello N-Total Team,
+                                  // Local Outlook (Desktop) - Uses mailto to open default email client
+                                  const subject = encodeURIComponent('Consultation Request - N-Total Cybersecurity');
+                                  const body = encodeURIComponent(`Hello N-Total Team,
 
 I would like to schedule a consultation to discuss my organization's cybersecurity needs.
 
 Organization: [Your Organization Name]
 Industry: [Your Industry]
 Current Challenges: [Brief description of your cybersecurity challenges]
+Preferred Meeting Time: [Your preferred date and time]
+Preferred Meeting Format: [In-person / Video call / Phone call]
 
-Please contact me to arrange a suitable time.
+Please contact me to arrange a suitable time for the consultation.
 
-Best regards`;
+Best regards,
+[Your Name]
+[Your Title]
+[Your Phone Number]
+[Your Email Address]`);
 
-                                  const startDate = new Date();
-                                  startDate.setDate(startDate.getDate() + 3);
-                                  const endDate = new Date(startDate);
-                                  endDate.setMinutes(startDate.getMinutes() + 30);
-
-                                  const outlookDesktopUrl = `outlook://calendar/action/compose?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}`;
-                                  window.location.href = outlookDesktopUrl;
+                                  window.location.href = `mailto:consultation@n-total.com?subject=${subject}&body=${body}`;
 
                                   document.getElementById('consultation-dropdown')?.classList.add('hidden');
                                 }}
@@ -2409,28 +2409,27 @@ Best regards,
                           <button
                             className="w-full text-left px-3 py-2 text-sm hover:bg-cyber-blue/10 rounded-md transition-colors flex items-center"
                             onClick={() => {
-                              // Local Outlook (Windows)
-                              const subject = 'N-Total Cybersecurity Demo Request';
-                              const body = `Hello N-Total Team,
+                              // Local Outlook (Desktop) - Uses mailto to open default email client
+                              const subject = encodeURIComponent('Demo Request - N-Total Cybersecurity');
+                              const body = encodeURIComponent(`Hello N-Total Team,
 
-I would like to schedule a personalized cybersecurity demo for my organization.
+I am interested in scheduling a personalized demo of your cybersecurity solutions.
 
 Organization: [Your Organization Name]
 Industry: [Your Industry]
 Preferred Demo Type: [Executive Overview / Technical Deep Dive / Industry-Specific]
 Preferred Time: [Your Preferred Time]
+Preferred Meeting Format: [In-person / Video call / Phone call]
 
 Please contact me to arrange a suitable time for the demonstration.
 
-Best regards`;
+Best regards,
+[Your Name]
+[Your Title]
+[Your Phone Number]
+[Your Email Address]`);
 
-                              const startDate = new Date();
-                              startDate.setDate(startDate.getDate() + 7);
-                              const endDate = new Date(startDate);
-                              endDate.setHours(startDate.getHours() + 1);
-
-                              const outlookDesktopUrl = `outlook://calendar/action/compose?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}`;
-                              window.location.href = outlookDesktopUrl;
+                              window.location.href = `mailto:demo@n-total.com?subject=${subject}&body=${body}`;
 
                               document.getElementById('demo-meeting-dropdown')?.classList.add('hidden');
                             }}
